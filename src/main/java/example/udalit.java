@@ -15,7 +15,7 @@ import org.sikuli.script.Screen;
 import org.sikuli.script.Region;
 import org.openqa.selenium.By;
 
-public class SikuliTestTest {
+public class udalit {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
@@ -31,7 +31,7 @@ public class SikuliTestTest {
     @Test
     public void testUntitled() throws Exception {
         driver.manage().window().maximize();
-       // driver.navigate().to("https://tender.sk.kz");
+        // driver.navigate().to("https://tender.sk.kz");
         driver.navigate().to("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
         // Thread.sleep(3000);
         //**********************************
@@ -56,14 +56,14 @@ public class SikuliTestTest {
         //*********************************
         driver.findElement(By.id("N11:DraftBid:1")).click();//зайти в заявку
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжить
-        driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click(); //создать ценовое
-        driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
+        driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click();//удалить файл
         screen.click(ok2);
+        
         Region window = screen.wait(dialog,10000);
-     //   window.click(inputPass);
+        //   window.click(inputPass);
         window.paste(inputPass,"123456");
         window.click(ok3);
-       // window = screen.wait(sertdialog,10000);
+        // window = screen.wait(sertdialog,10000);
         screen.click(gucalov2);
         screen.click(ok3);
         screen.wait(podpisat, 10000);
