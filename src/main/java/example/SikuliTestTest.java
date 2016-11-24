@@ -42,6 +42,12 @@ public class SikuliTestTest {
         Pattern inputPass = new Pattern("c:\\forsikuli\\inputPass.png");
         Pattern dialog = new Pattern("c:\\forsikuli\\dialog.png");
         Pattern ok3 = new Pattern("c:\\forsikuli\\ok3.png");
+        Pattern dialog2 = new Pattern("c:\\forsikuli\\dialog2.png");
+        Pattern gucalov2 = new Pattern("c:\\forsikuli\\gucalov2.png");
+        Pattern podpisat = new Pattern("c:\\forsikuli\\podpisat.png");
+        Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
+        Pattern ok4 = new Pattern("c:\\forsikuli\\ok4.png");
+        Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
         screen.wait(gucalov);
         screen.click(gucalov);
         screen.click(ok_btn);
@@ -50,18 +56,25 @@ public class SikuliTestTest {
         //*********************************
         driver.findElement(By.id("N11:DraftBid:1")).click();//зайти в заявку
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжить
-        //driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click(); //создать ценовое
+        driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click(); //создать ценовое
        // driver.findElement(By.xpath("//img[@title='Подписать файл']")).click();//подписать файл
         driver.findElement(By.xpath("//span/a/img")).click();//подписать файл
         screen.click(ok2);
-       Region window = screen.wait(dialog,10000);
-       window.type(inputPass,"123456");
-        //screen.type(inputPass,"123456");
+        Region window = screen.wait(dialog,10000);
+     //   window.click(inputPass);
+        window.paste(inputPass,"123456");
         window.click(ok3);
-        window.click(inputPass);
-        window.type(inputPass,"123456");
-        window.click(ok3);
-        Thread.sleep(9000);
+       // window = screen.wait(sertdialog,10000);
+        screen.click(gucalov2);
+        screen.click(ok3);
+        screen.wait(podpisat, 10000);
+        screen.click(podpisat);
+        Region wdialog2 = screen.wait(dialog2, 10000);
+        wdialog2.click(input2);
+        wdialog2.paste(input2, "123456");
+        wdialog2.click(ok4);
+        screen.click(otpravit);
+        //Thread.sleep(9000);
         // screen.doubleClick(poisk);
         // Thread.sleep(3000);
 
