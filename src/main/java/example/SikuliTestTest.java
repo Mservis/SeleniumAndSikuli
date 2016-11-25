@@ -48,28 +48,26 @@ public class SikuliTestTest {
         Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
         Pattern ok4 = new Pattern("c:\\forsikuli\\ok4.png");
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
-        screen.wait(gucalov);
-        screen.click(gucalov);
-        screen.click(ok_btn);
+       // Region sertwindow = new Region(595,346,321,188);
+        //sertwindow.click(gucalov);
+        //sertwindow.click(ok_btn);
         driver.findElement(By.id("passwordField")).sendKeys("123456");
         driver.findElement(By.id("SubmitButton")).click();
         //*********************************
-        driver.findElement(By.id("N11:DraftBid:1")).click();//зайти в заявку
+        driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжить
-        driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click(); //создать ценовое
+       // driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click(); //создать ценовое
+        driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+       // driver.findElement(By.xpath("//td[10]/button")).click();//создать ценовое
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
         screen.click(ok2);
         Region window = screen.wait(dialog,10000);
-     //   window.click(inputPass);
         window.paste(inputPass,"123456");
         window.click(ok3);
-       // window = screen.wait(sertdialog,10000);
-        screen.click(gucalov2);
-        screen.click(ok3);
         screen.wait(podpisat, 10000);
         screen.click(podpisat);
         Region wdialog2 = screen.wait(dialog2, 10000);
-        wdialog2.click(input2);
+        wdialog2.wait(input2, 10000);
         wdialog2.paste(input2, "123456");
         wdialog2.click(ok4);
         screen.click(otpravit);
