@@ -1,19 +1,18 @@
-package example;
+package IE8;
 
 //import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
 import org.sikuli.script.Region;
-import org.openqa.selenium.By;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.fail;
 
 public class SikuliTestTest {
     private WebDriver driver;
@@ -28,7 +27,7 @@ public class SikuliTestTest {
     }
 
     @Test
-    public void testUntitled() throws Exception {
+    public void IE8_sozdat_cenovoet() throws Exception {
         driver.manage().window().maximize();
        // driver.navigate().to("https://tender.sk.kz");
         driver.get("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
