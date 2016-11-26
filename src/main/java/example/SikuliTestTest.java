@@ -54,7 +54,7 @@ public class SikuliTestTest {
         driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
         Region okwindow = new Region(728,472,207,80);
-        okwindow.click(ok2);
+        okwindow.click(ok2);//j
         okwindow.setRect(617,427,265,84);
         okwindow.wait(inputPass,20000);
         okwindow.paste(inputPass,"123456");
