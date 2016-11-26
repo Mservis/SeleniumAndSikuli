@@ -1,43 +1,61 @@
 package mozillal;
 
 //import java.util.regex.Pattern;
-
+import  java.io.File;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Region;
-
+//import org.sikuli.script.Pattern;
+//import org.sikuli.script.Region;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
 
 public class SikuliTestTest {
     private WebDriver driver;
+    private FirefoxBinary binary;
    // private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
+    private WebDriverWait wait;
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        File profdir = new File("src/profile/dws67wyi.default-1432484266776");
+        File binarydir = new File("c:\\Program Files\\Mozilla Firefox\\firefox.exe");
+        FirefoxProfile profile = new FirefoxProfile(profdir);
+        DesiredCapabilities caps = new DesiredCapabilities();
+        binary = new FirefoxBinary(binarydir);
+       // driver = new FirefoxDriver(binary, profile);
+        caps.setCapability(FirefoxDriver.PROFILE,profile);
+        caps.setCapability(FirefoxDriver.MARIONETTE, false);
+        caps.setCapability(FirefoxDriver.BINARY,binary);
+        driver = new FirefoxDriver(caps);
+        System.out.println(((HasCapabilities)driver).getCapabilities());
+        wait = new WebDriverWait(driver, 10);
     }
 
     @Test
     public void mozilla_sozdat_cenovoet() throws Exception {
-        driver.manage().window().maximize();
+       driver.manage().window().maximize();
        // driver.navigate().to("https://tender.sk.kz");
+
         driver.get("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
-         Thread.sleep(30000);
+       // driver.get("http://www.ya.ru");
+       // Thread.sleep(50000);
         //**********************************
-       // driver.findElement(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")).click();
+       // driver.fin56dElement(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")).click();
        // driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
         //*********************
-
+  /*
         Pattern ok2 = new Pattern("c:\\forsikuli\\ie8\\ok.png");
         Pattern inputPass = new Pattern("c:\\forsikuli\\ie8\\pass.png");
         Pattern ok3 = new Pattern("c:\\forsikuli\\ie8\\ok2.png");
@@ -74,7 +92,7 @@ public class SikuliTestTest {
         okwindow.wait(gotovotpravit, 10000);
         okwindow.click(otpravit);
         //Thread.sleep(10000);
-
+*/
     }
 
     @After
