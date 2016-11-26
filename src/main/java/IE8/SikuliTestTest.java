@@ -37,28 +37,32 @@ public class SikuliTestTest {
        // driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
         //*********************
 
-        Pattern ok2 = new Pattern("c:\\forsikuli\\ok2.png");
-        Pattern inputPass = new Pattern("c:\\forsikuli\\inputPass.png");
-        Pattern ok3 = new Pattern("c:\\forsikuli\\ok3.png");
+        Pattern ok2 = new Pattern("c:\\forsikuli\\ie8\\ok.png");
+        Pattern inputPass = new Pattern("c:\\forsikuli\\ie8\\pass.png");
+        Pattern ok3 = new Pattern("c:\\forsikuli\\ie8\\ok2.png");
         Pattern gotovotpravit = new Pattern("c:\\forsikuli\\gotovotpravit.png");
-        Pattern podpisat = new Pattern("c:\\forsikuli\\podpisat.png");
+        Pattern podpisat = new Pattern("c:\\forsikuli\\ie8\\podpisat.png");
         Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
-        Pattern ok4 = new Pattern("c:\\forsikuli\\ok4.png");
+        Pattern ok4 = new Pattern("c:\\forsikuli\\ie8\\ok3.png");
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
         driver.findElement(By.id("passwordField")).sendKeys("123456");
-
         driver.findElement(By.id("SubmitButton")).click();
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
         driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
-        Region okwindow = new Region(728,472,207,80);
+        // всплывающее окно браузера
+     //  Thread.sleep(20000);
+        Region okwindow = new Region(754,485,115,73);
+        okwindow.wait(ok2, 10000);
         okwindow.click(ok2);
-        okwindow.setRect(617,427,265,84);
+        //окно джава просит пароль
+        okwindow.setRect(618,433,271,82);
         okwindow.wait(inputPass,20000);
         okwindow.paste(inputPass,"123456");
         okwindow.click(ok3);
-        okwindow.setRect(35,570,269,68);
+        //подписать
+        okwindow.setRect(123,628,90,32);
         okwindow.wait(podpisat, 10000);
         okwindow.click(podpisat);
         okwindow.setRect(597,433,245,54);
