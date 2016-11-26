@@ -54,7 +54,7 @@ public class udalit {
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
         driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click();
         Region okwin = new Region(749,479,100,49);
-        okwin.click(ok2);
+      //  okwin.click(ok2);
         Thread.sleep(9000);
     }
 
