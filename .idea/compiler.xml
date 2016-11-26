@@ -9,7 +9,7 @@
         <module name="SeleniumAndSikuli" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.5">
+    <bytecodeTargetLevel>
       <module name="SeleniumAndSikuli" target="1.5" />
     </bytecodeTargetLevel>
   </component>
