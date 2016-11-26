@@ -15,63 +15,51 @@ import org.sikuli.script.Screen;
 import org.sikuli.script.Region;
 import org.openqa.selenium.By;
 
-public class SikuliTestTest {
+public class podat {
     private WebDriver driver;
-   // private String baseUrl;
+    private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
     public void setUp() throws Exception {
         driver = new InternetExplorerDriver();
-       // baseUrl = "http://tender.sk.kz/";
+        //baseUrl = "http://tender.sk.kz/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
-    public void testUntitled() throws Exception {
+    public void podatzayavku() throws Exception {
         driver.manage().window().maximize();
-       // driver.navigate().to("https://tender.sk.kz");
-        driver.get("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
+        // driver.navigate().to("https://tender.sk.kz");
+        driver.navigate().to("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
         // Thread.sleep(3000);
         //**********************************
-       // driver.findElement(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")).click();
-       // driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
-        //*********************
-
+        Screen screen = new Screen();
+        Pattern ok_btn = new Pattern("c:\\forsikuli\\ok.png");
+        Pattern gucalov = new Pattern("c:\\forsikuli\\gucalov.png");
         Pattern ok2 = new Pattern("c:\\forsikuli\\ok2.png");
         Pattern inputPass = new Pattern("c:\\forsikuli\\inputPass.png");
+        Pattern dialog = new Pattern("c:\\forsikuli\\dialog.png");
         Pattern ok3 = new Pattern("c:\\forsikuli\\ok3.png");
-        Pattern gotovotpravit = new Pattern("c:\\forsikuli\\gotovotpravit.png");
+        Pattern dialog2 = new Pattern("c:\\forsikuli\\dialog2.png");
+        Pattern gucalov2 = new Pattern("c:\\forsikuli\\gucalov2.png");
         Pattern podpisat = new Pattern("c:\\forsikuli\\podpisat.png");
         Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
         Pattern ok4 = new Pattern("c:\\forsikuli\\ok4.png");
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
         driver.findElement(By.id("passwordField")).sendKeys("123456");
-
         driver.findElement(By.id("SubmitButton")).click();
-        driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
-        driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
-        driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
-        driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
-        Region okwindow = new Region(728,472,207,80);
-        okwindow.click(ok2);
-        okwindow.setRect(617,427,265,84);
-        okwindow.wait(inputPass,20000);
-        okwindow.paste(inputPass,"123456");
-        okwindow.click(ok3);
-        okwindow.setRect(35,570,269,68);
-        okwindow.wait(podpisat, 10000);
-        okwindow.click(podpisat);
-        okwindow.setRect(597,433,245,54);
-        okwindow.wait(input2, 10000);
-        okwindow.paste(input2, "123456");
-        okwindow.click(ok4);
-        okwindow.setRect(32,592,276,73);
-        okwindow.wait(gotovotpravit, 10000);
-        okwindow.click(otpravit);
-        //Thread.sleep(10000);
-
+        //*********************************
+        driver.findElement(By.xpath("//a[contains(text(),'1100359')]")).click();//зайти в заявку
+        driver.findElement(By.id("AttributeListItem")).click();//нажать список
+        new Select(driver.findElement(By.id("AttributeListItem"))).
+                            selectByVisibleText("Свидетельство о гос. регистрации");// выбрать
+        driver.findElement(By.id("AddFileButton")).click();//добавить
+        Region okwindow = new Region(617,427,265,84);// убить окно джава
+        okwindow.wait(inputPass,20000);// убить окно джава
+        okwindow.paste(inputPass,"123456");// убить окно джава
+        okwindow.click(ok3);// убить окно джава
     }
 
     @After
@@ -91,13 +79,7 @@ public class SikuliTestTest {
             return false;
         }
     }
-private  void ERR1()// ошибка неправильно зашли
-{
-    if (isElementPresent(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")))
-    {
-        driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
-    }
-}
+
     private boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
