@@ -52,7 +52,9 @@ public class udalit {
         driver.findElement(By.id("SubmitButton")).click();
         //*********************************
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click();
+
         screen.click(ok2);
         Thread.sleep(9000);
     }

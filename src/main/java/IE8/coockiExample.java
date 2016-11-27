@@ -1,60 +1,38 @@
-package mozillal;
+package IE8;
 
 //import java.util.regex.Pattern;
-import  java.io.File;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.sikuli.script.Pattern;
-//import org.sikuli.script.Region;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Region;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
 
-public class SikuliTestTest {
+public class coockiExample {
     private WebDriver driver;
-    private FirefoxBinary binary;
-   // private String baseUrl;
+    // private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
-    private WebDriverWait wait;
 
     @Before
     public void setUp() throws Exception {
-        File profdir = new File("src/profile/dws67wyi.default-1432484266776");
-        File binarydir = new File("c:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-        FirefoxProfile profile = new FirefoxProfile(profdir);
-        DesiredCapabilities caps = new DesiredCapabilities();
-        binary = new FirefoxBinary(binarydir);
-        //caps.setCapability(FirefoxDriver.PROFILE,profile);
-        caps.setCapability(FirefoxDriver.MARIONETTE, false);
-       //caps.setCapability(FirefoxDriver.BINARY,binary);
-        driver = new FirefoxDriver(caps);
-        System.out.println(((HasCapabilities)driver).getCapabilities());
-        wait = new WebDriverWait(driver, 10);
+        driver = new InternetExplorerDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
-    public void mozilla_sozdat_cenovoet() throws Exception {
-       driver.manage().window().maximize();
-       // driver.navigate().to("https://tender.sk.kz");
+    public void IE8_coocke() throws Exception {
+        driver.manage().window().maximize();
 
-        driver.get("https://tender.sk.kz/");
-       // driver.get("http://www.ya.ru");
-       // Thread.sleep(50000);
-        //**********************************
-       // driver.fin56dElement(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")).click();
-       // driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
-        //*********************
-  /*
+        // driver.navigate().to("https://tender.sk.kz");
+        driver.get("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
+
         Pattern ok2 = new Pattern("c:\\forsikuli\\ie8\\ok.png");
         Pattern inputPass = new Pattern("c:\\forsikuli\\ie8\\pass.png");
         Pattern ok3 = new Pattern("c:\\forsikuli\\ie8\\ok2.png");
@@ -63,14 +41,57 @@ public class SikuliTestTest {
         Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
         Pattern ok4 = new Pattern("c:\\forsikuli\\ie8\\ok3.png");
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
+
         driver.findElement(By.id("passwordField")).sendKeys("123456");
-        driver.findElement(By.id("SubmitButton")).click();
+        driver.findElement(By.id("SubmitButton")).click(); // залогинился
+        Thread.sleep(5000);
+        Set<Cookie> cookiesList1 = driver.manage().getCookies();//чиатю куки
+        System.out.print("Прочитал Куки   ");
+        System.out.println(driver.manage().getCookies());
+        driver.quit();
+        driver = null;
+        driver = new InternetExplorerDriver();
+        driver.manage().window().maximize();
+        System.out.print("Новые Куки   ");
+        System.out.println(driver.manage().getCookies());
+        System.out.println("Выгружаю куки   ");
+        for (Cookie gcookies : cookiesList1) {
+            System.out.print(gcookies);
+        }
+        System.out.println("");
+        System.out.println("Заисытваю куки   ");
+        for (Cookie gcookies : cookiesList1) {
+            driver.manage().addCookie(gcookies);
+        }
+
+        System.out.println("Записал куки   ");
+        driver.get("https://tender.sk.kz/OA_HTML/RF.jsp?function_id=17573&resp_id=50659&resp_" +
+                "appl_id=20003&security_group_id=0&lang_code=RU&params=90YrEYvK69ub-" +
+                "ASmfkG36h0EYWtzdBi0HRFW2ljektI&oas=8-n1WxAOZ4cw83qW7pPcFQ..");
+        System.out.print("Залогинился одной строкой    ");
+        System.out.println(driver.manage().getCookies());
+
+        //перезаписать куки
+
+
+
+
+        System.out.print("Перезаписал куки             ");
+        System.out.println(driver.manage().getCookies());
+
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+       /* System.out.print("Зашел в заявку    ");
+        System.out.println(driver.manage().getCookies());*/
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
+       /* System.out.print("продолжить    ");
+        System.out.println(driver.manage().getCookies());*/
         driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+        /*System.out.print("создал ценовое    ");*/
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
+       /* System.out.print("подписал файл    ");
+        System.out.println(driver.manage().getCookies());*/
         // всплывающее окно браузера
-     //  Thread.sleep(20000);
+        //  Thread.sleep(20000);
         Region okwindow = new Region(754,485,115,73);
         okwindow.wait(ok2, 10000);
         okwindow.click(ok2);
@@ -90,8 +111,9 @@ public class SikuliTestTest {
         okwindow.setRect(32,592,276,73);
         okwindow.wait(gotovotpravit, 10000);
         okwindow.click(otpravit);
+        System.out.println(driver.manage().getCookies());
         //Thread.sleep(10000);
-*/
+
     }
 
     @After
@@ -111,13 +133,13 @@ public class SikuliTestTest {
             return false;
         }
     }
-private  void ERR1()// ошибка неправильно зашли
-{
-    if (isElementPresent(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")))
+    private  void ERR1()// ошибка неправильно зашли
     {
-        driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
+        if (isElementPresent(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")))
+        {
+            driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
+        }
     }
-}
     private boolean isAlertPresent() {
         try {
             driver.switchTo().alert();

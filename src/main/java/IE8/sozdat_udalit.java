@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
 
-public class SikuliTestTest {
+public class sozdat_udalit {
     private WebDriver driver;
-   // private String baseUrl;
+    // private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
@@ -24,24 +24,15 @@ public class SikuliTestTest {
     public void setUp() throws Exception {
         driver = new InternetExplorerDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     @Test
-    public void IE8_sozdat_cenovoet() throws Exception {
-        driver.manage().window().maximize();
-       /* System.out.print("только включился    ");
-        System.out.println(driver.manage().getCookies());*/
-       // driver.navigate().to("https://tender.sk.kz");
-       // driver.get("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
-        //driver.get("https://tender.sk.kz/OA_HTML/RF.jsp?function_id=28716&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=RU&params=KQ0ueFd3h5ncJDQ0.532EQ&oas=vDDpm4e-WoNJpnFHiic_hQ..");
-        driver.get("https://tender.sk.kz/OA_HTML/RF.jsp?function_id=17573&resp_id=50659&resp_appl_id=20003&security_group_id=0&lang_code=RU&params=90YrEYvK69ub-ASmfkG36h0EYWtzdBi0HRFW2ljektI&oas=8-n1WxAOZ4cw83qW7pPcFQ..");
-        /*System.out.print("Зашел на портал    ");
-        System.out.println(driver.manage().getCookies());*/
-        //Thread.sleep(30000);
-        //**********************************
-       // driver.findElement(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")).click();
-       // driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
-        //*********************
+    public void IE8_sozdat_udalit_cenovoet() throws Exception {
+
+       // driver.get("https://tender.sk.kz/OA_HTML/RF.jsp?function_id=28716&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=RU&params=KQ0ueFd3h5ncJDQ0.532EQ&oas=vDDpm4e-WoNJpnFHiic_hQ..");
+        driver.navigate().to("https://tender.sk.kz/OA_HTML/AppsLocalLogin.jsp");
+       // Pattern proc = new Pattern("c:\\forsikuli\\p.PNG");
         Pattern ok2 = new Pattern("c:\\forsikuli\\ie8\\ok.png");
         Pattern inputPass = new Pattern("c:\\forsikuli\\ie8\\pass.png");
         Pattern ok3 = new Pattern("c:\\forsikuli\\ie8\\ok2.png");
@@ -50,25 +41,18 @@ public class SikuliTestTest {
         Pattern input2 = new Pattern("c:\\forsikuli\\input2.png");
         Pattern ok4 = new Pattern("c:\\forsikuli\\ie8\\ok3.png");
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
+        Pattern otpravil = new Pattern("c:\\forsikuli\\ie8\\otpravil.png");
+
         driver.findElement(By.id("passwordField")).sendKeys("123456");
         driver.findElement(By.id("SubmitButton")).click();
-        Thread.sleep(30000);
-       /*System.out.print("Залогинился    ");
-        System.out.println(driver.manage().getCookies());*/
-
+        Thread.sleep(2000);
+        String baseUrl = driver.getCurrentUrl();
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
-       /* System.out.print("Зашел в заявку    ");
-        System.out.println(driver.manage().getCookies());*/
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
-       /* System.out.print("продолжить    ");
-        System.out.println(driver.manage().getCookies());*/
         driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
-        /*System.out.print("создал ценовое    ");*/
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
-       /* System.out.print("подписал файл    ");
-        System.out.println(driver.manage().getCookies());*/
         // всплывающее окно браузера
-     //  Thread.sleep(20000);
+        //  Thread.sleep(20000);
         Region okwindow = new Region(754,485,115,73);
         okwindow.wait(ok2, 10000);
         okwindow.click(ok2);
@@ -85,11 +69,64 @@ public class SikuliTestTest {
         okwindow.wait(input2, 10000);
         okwindow.paste(input2, "123456");
         okwindow.click(ok4);
-        okwindow.setRect(32,592,276,73);
+
+        okwindow.setRect(31,625,97,40);
         okwindow.wait(gotovotpravit, 10000);
+        okwindow.setRect(217,625,84,38);
+        //Thread.sleep(20000);
         okwindow.click(otpravit);
-        System.out.println(driver.manage().getCookies());
-        //Thread.sleep(10000);
+        okwindow.setRect(31,625,97,40);
+        okwindow.wait(gotovotpravit, 10000);
+        /*okwindow.setRect(1065,252,256,39);
+        okwindow.wait(otpravil, 10000);*/
+        for (int i = 0; i < 100; i++)
+        {
+            //Thread.sleep(3000);
+            driver.get(baseUrl);
+            driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+            //Thread.sleep(3000);//удалить заявку
+        driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click(); //удалить заявку
+        Region okwin = new Region(749,479,100,49);
+        okwin.click(ok2);//jjj
+        Thread.sleep(9000);
+            driver.get(baseUrl);
+            driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+            driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
+           // Thread.sleep(5000);
+        driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+        driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
+        // всплывающее окно браузера
+        //  Thread.sleep(20000);
+        okwindow.setRect(754,485,115,73);
+        okwindow.wait(ok2, 10000);
+        okwindow.click(ok2);
+        //окно джава просит пароль
+        okwindow.setRect(618,433,271,82);
+        okwindow.wait(inputPass,20000);
+        okwindow.paste(inputPass,"123456");
+        okwindow.click(ok3);
+        //подписать
+        okwindow.setRect(123,628,90,32);
+        okwindow.wait(podpisat, 10000);
+        okwindow.click(podpisat);
+        okwindow.setRect(597,433,245,54);
+        okwindow.wait(input2, 10000);
+        okwindow.paste(input2, "123456");
+        okwindow.click(ok4);
+
+        okwindow.setRect(31,625,97,40);
+        okwindow.wait(gotovotpravit, 10000);
+        okwindow.setRect(217,625,84,38);
+        okwindow.click(otpravit);
+        okwindow.setRect(31,625,97,40);
+        okwindow.wait(gotovotpravit, 10000);
+        }
+        Thread.sleep(3000);//удалить заявку
+        driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click(); //удалить заявку
+        Region okwin = new Region(749,479,100,49);
+        okwin.click(ok2);//jjj
+        Thread.sleep(9000);
+
 
     }
 
@@ -110,13 +147,13 @@ public class SikuliTestTest {
             return false;
         }
     }
-private  void ERR1()// ошибка неправильно зашли
-{
-    if (isElementPresent(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")))
+    private  void ERR1()// ошибка неправильно зашли
     {
-        driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
+        if (isElementPresent(By.xpath("//span[@id='FNDDIALOGPAGE']/div/div[3]/div/div/table/tbody/tr/td[3]/table/tbody/tr/td/h1")))
+        {
+            driver.findElement(By.id("PON_SOURCING_SUPPLIER")).click();
+        }
     }
-}
     private boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
