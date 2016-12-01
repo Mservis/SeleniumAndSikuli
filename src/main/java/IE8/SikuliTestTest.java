@@ -52,11 +52,54 @@ public class SikuliTestTest {
         Pattern otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
         driver.findElement(By.id("passwordField")).sendKeys("123456");
         driver.findElement(By.id("SubmitButton")).click();
-        Thread.sleep(30000);
-       /*System.out.print("Залогинился    ");
-        System.out.println(driver.manage().getCookies());*/
+        long fl = System.currentTimeMillis();
+        System.out.println("Вермя = " + fl);
+        //
+        //System.out.print("Залогинился    ");
+        /*System.out.println(driver.manage().getCookies());*/
 
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+        driver.findElement(By.linkText("Строки")).click();
+        //Thread.sleep(5000);
+        String myrez0 = driver.findElement(By.id("N10:BidStartPrice:0")).getText();
+        String myrez1 = driver.findElement(By.id("N10:BidStartPrice:1")).getText();
+        //System.out.println(myrez0);
+        //System.out.println(myrez1);
+        int i=0;
+        String str0 = "";
+        for (i = 0; myrez0.charAt(i) != '.';i++)
+        {
+            if (myrez0.charAt(i)!=',')
+            {
+               str0 += myrez0.charAt(i);
+            }
+
+        }
+        String str1 = "";
+        for (i = 0; i < myrez1.length();i++)
+        {
+            if (myrez1.charAt(i)!=',')
+            {
+                str1 += myrez1.charAt(i);
+            }
+
+
+        }
+        Double dbl0 = new Double(str0);
+        Double dbl1 = new Double(str1);
+        int int0 = (int) (dbl0*0.99);
+        int int1 = (int) (dbl1*0.99);
+       // System.out.println(dbl0);
+        //System.out.println(dbl1);
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).click();
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).clear();
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).sendKeys(""+ int0);
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).click();
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).clear();
+        driver.findElement(By.xpath("//input[@id='N10:BidCurrencyPriceEntry:1']")).sendKeys(""+int1);
+        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).click();
+       // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).sendKeys(Integer.toString(int1));
+        //Thread.sleep(30000);
        /* System.out.print("Зашел в заявку    ");
         System.out.println(driver.manage().getCookies());*/
         driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит

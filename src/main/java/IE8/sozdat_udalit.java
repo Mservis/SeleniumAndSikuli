@@ -89,11 +89,13 @@ public class sozdat_udalit {
         Region okwin = new Region(749,479,100,49);
         okwin.click(ok2);//jjj
         Thread.sleep(9000);
-            driver.get(baseUrl);
-            driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
-            driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
-           // Thread.sleep(5000);
-        driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+        driver.get(baseUrl);
+        driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+        driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
+        Thread.sleep(5000);
+       // driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+        driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click();//создать ценовое
+            Thread.sleep(5000);
         driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
         // всплывающее окно браузера
         //  Thread.sleep(20000);

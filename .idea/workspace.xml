@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30c4ebf5-7080-4a89-a47d-c5830e0e6228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/IE8/coockiExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/IE8/SikuliTestTest.class" afterPath="$PROJECT_DIR$/target/classes/IE8/SikuliTestTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/udalit.class" afterPath="$PROJECT_DIR$/target/classes/example/udalit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mozillal/SikuliTestTest.class" afterPath="$PROJECT_DIR$/target/classes/mozillal/SikuliTestTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/example/udalit.java" afterPath="$PROJECT_DIR$/src/main/java/example/udalit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozillal/SikuliTestTest.java" afterPath="$PROJECT_DIR$/src/main/java/mozillal/SikuliTestTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,14 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SikuliTestTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SikuliTestTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="847">
+              <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sozdat_udalit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sozdat_udalit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+            <state relative-caret-position="1734">
+              <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -95,8 +86,8 @@
       <file leaf-file-name="udalit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="80" />
+            <state relative-caret-position="262">
+              <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -115,6 +106,9 @@
     <findStrings>
       <find>ise</find>
       <find>gotov</find>
+      <find>FileListRNEx:SignItem:1</find>
+      <find>a[@id='FileListRNEx:SignItem:1</find>
+      <find>sub</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,15 +126,15 @@
         <option value="$PROJECT_DIR$/src/main/java/example/podat.java" />
         <option value="$PROJECT_DIR$/src/main/java/version/podat.java" />
         <option value="$PROJECT_DIR$/src/main/java/IE8/podat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IE8/udalit.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/SikuliTestTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozillal/podat.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozillal/udalit.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozillal/SikuliTestTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/udalit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/IE8/coockiExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IE8/udalit.java" />
       </list>
     </option>
   </component>
@@ -367,7 +361,7 @@
       <recent name="C:\Users\Administrator\IdeaProjects\SeleniumAndSikuli\src\main\java\8version" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.sozdat_udalit.IE8_sozdat_udalit_cenovoet">
+  <component name="RunManager" selected="JUnit.udalit.IE8_udalit_cenovoe">
     <configuration default="false" name="SikuliTestTest.IE8_sozdat_cenovoet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -711,10 +705,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.sozdat_udalit.IE8_sozdat_udalit_cenovoet" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.udalit.IE8_udalit_cenovoe" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.coockiExample.IE8_coocke" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SikuliTestTest.IE8_sozdat_cenovoet" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.udalit.IE8_udalit_cenovoe" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SikuliTestTest.IE8_sozdat_cenovoet" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.sozdat_udalit.IE8_sozdat_udalit_cenovoet" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.coockiExample.IE8_coocke" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.udalit.testUntitled" />
       </list>
     </recent_temporary>
@@ -733,40 +727,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 27m 54s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 10m 20s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 28m 43s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 19m 10s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 31m 07s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 21m 17s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 33m 55s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 21m 38s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 44m 34s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 22m 40s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 21h 46m 32s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="SikuliTestTest_IE8_sozdat_cenovoet - 2016.12.01 at 16h 24m 49s.xml">
+      <configuration name="SikuliTestTest.IE8_sozdat_cenovoet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 22h 02m 42s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.01 at 16h 10m 55s.xml">
+      <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 22h 03m 53s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.01 at 16h 23m 47s.xml">
+      <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 23h 40m 48s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.01 at 16h 25m 38s.xml">
+      <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sozdat_udalit_IE8_sozdat_udalit_cenovoet - 2016.11.27 at 23h 52m 57s.xml">
-      <configuration name="sozdat_udalit.IE8_sozdat_udalit_cenovoet" configurationId="JUnit" />
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.01 at 16h 27m 53s.xml">
+      <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1448" height="864" extended-state="7" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1448" height="864" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -778,7 +772,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39194632" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39194632" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1190,16 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/example/SikuliTestTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1229,18 +1213,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="80" />
+        <state relative-caret-position="1734">
+          <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/sozdat_udalit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+        <state relative-caret-position="262">
+          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/SikuliTestTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
           <folding />
         </state>
       </provider>
