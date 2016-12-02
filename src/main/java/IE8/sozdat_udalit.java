@@ -2,6 +2,7 @@ package IE8;
 
 //import java.util.regex.Pattern;
 
+import org.apache.bcel.generic.GOTO;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Region;
+import java.util.Random;
 
 import java.util.concurrent.TimeUnit;
 
@@ -81,22 +83,100 @@ public class sozdat_udalit {
         okwindow.wait(otpravil, 10000);*/
         for (int i = 0; i < 100; i++)
         {
-            //Thread.sleep(3000);
+
+
             driver.get(baseUrl);
             driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
             //Thread.sleep(3000);//удалить заявку
-        driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click(); //удалить заявку
-        Region okwin = new Region(749,479,100,49);
-        okwin.click(ok2);//jjj
-        Thread.sleep(9000);
-        driver.get(baseUrl);
-        driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
-        driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
-        Thread.sleep(5000);
+            driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click(); //удалить заявку
+            Region okwin = new Region(749, 479, 100, 49);
+            okwin.click(ok2);//jjj
+            Thread.sleep(9000);
+    one:
+       {
+            driver.get(baseUrl);
+            driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+
+
+           driver.findElement(By.linkText("Строки")).click();
+           Thread.sleep(2000);
+           String myrez0 = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[4]/span")).getText();
+           String myrez1 = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[4]/span")).getText();
+           //System.out.println(myrez0);
+           //System.out.println(myrez1);
+
+           String str0 = "";
+           for (i = 0; myrez0.charAt(i) != '.';i++)
+           {
+               if (myrez0.charAt(i)!=',')
+               {
+                   str0 += myrez0.charAt(i);
+               }
+
+           }
+           String str1 = "";
+           for (i = 0; i < myrez1.length();i++)
+           {
+               if (myrez1.charAt(i)!=',')
+               {
+                   str1 += myrez1.charAt(i);
+               }
+
+
+           }
+           Double dbl0 = new Double(str0);
+           Double dbl1 = new Double(str1);
+           Random myRandom = new Random();
+           int n = myRandom.nextInt(49);
+
+           System.out.println(""+n);
+
+           Double dbl00 = new Double(n);
+           System.out.println(""+dbl00);
+           int int0 = (int) (dbl0*(0.95 + (dbl00/1000)));
+           int int1 = (int) (dbl1*(0.95 + (dbl00/1000)));
+           // System.out.println(dbl0);
+           //System.out.println(dbl1);
+
+           WebElement el =  driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input"));
+           el.click();
+           el.sendKeys(Keys.CONTROL + "a");
+           el.sendKeys(""+ int0);
+           //h1.x5r
+           // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).click();
+           // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).clear();
+           driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[5]/input")).click();
+           Thread.sleep(2000);
+           el = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[5]/input"));
+           el.sendKeys(Keys.CONTROL + "a");
+           el.sendKeys(""+int1);
+           el.sendKeys(Keys.TAB);
+          // driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input")).click();
+           //driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[4]/span")).click();
+           Thread.sleep(5000);
+           driver.findElement(By.xpath("//div[6]/div/table/tbody/tr/td[2]/table/tbody/tr/td[10]/button")).click();//нажать продолжит
+           // driver.findElement(By.id("ContinueBtn")).click();//нажать продолжит
+            // driver.findElement(By.cssSelector("h1.x5r")).click();//ошибка
+
+           /* if (isElementPresent(By.cssSelector("h1.x5r"))) {
+                break one;
+            }*/
+           driver.findElement(By.xpath("//div[6]/div/table/tbody/tr/td[2]/table/tbody/tr/td[10]/button")).click();
+          /* if (isElementPresent(By.cssSelector("h1.x5r"))) {
+               break one;
+           }*/
+           driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
+           /*  if (isElementPresent(By.cssSelector("h1.x5r"))) {
+               break one;
+           }*/
+       }
+
+       // Thread.sleep(5000);
        // driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
-        driver.findElement(By.xpath("(//button[@type='submit'])[5]")).click();//создать ценовое
-            Thread.sleep(5000);
-        driver.findElement(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")).click();//подписать файл
+       // driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое
+
+           // Thread.sleep(5000);
+
         // всплывающее окно браузера
         //  Thread.sleep(20000);
         okwindow.setRect(754,485,115,73);

@@ -60,9 +60,9 @@ public class SikuliTestTest {
 
         driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
         driver.findElement(By.linkText("Строки")).click();
-        //Thread.sleep(5000);
-        String myrez0 = driver.findElement(By.id("N10:BidStartPrice:0")).getText();
-        String myrez1 = driver.findElement(By.id("N10:BidStartPrice:1")).getText();
+        Thread.sleep(2000);
+        String myrez0 = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[4]/span")).getText();
+        String myrez1 = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[4]/span")).getText();
         //System.out.println(myrez0);
         //System.out.println(myrez1);
         int i=0;
@@ -87,17 +87,19 @@ public class SikuliTestTest {
         }
         Double dbl0 = new Double(str0);
         Double dbl1 = new Double(str1);
-        int int0 = (int) (dbl0*0.99);
-        int int1 = (int) (dbl1*0.99);
+        int int0 = (int) (dbl0*0.97);
+        int int1 = (int) (dbl1*0.97);
        // System.out.println(dbl0);
         //System.out.println(dbl1);
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).click();
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).clear();
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).sendKeys(""+ int0);
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).click();
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).clear();
-        driver.findElement(By.xpath("//input[@id='N10:BidCurrencyPriceEntry:1']")).sendKeys(""+int1);
-        driver.findElement(By.id("N10:BidCurrencyPriceEntry:0")).click();
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input")).click();
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input")).sendKeys(Keys.CONTROL + "a");
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input")).sendKeys(""+ int0);
+       // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).click();
+       // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).clear();
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[5]/input")).click();
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[5]/input")).sendKeys(Keys.CONTROL + "a");
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[3]/td[5]/input")).sendKeys(""+int1);
+        driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[5]/input")).click();
        // driver.findElement(By.id("N10:BidCurrencyPriceEntry:1")).sendKeys(Integer.toString(int1));
         //Thread.sleep(30000);
        /* System.out.print("Зашел в заявку    ");
