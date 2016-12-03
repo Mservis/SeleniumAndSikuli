@@ -92,8 +92,7 @@ public class sozdat_udalit {
             Region okwin = new Region(749, 479, 100, 49);
             okwin.click(ok2);//jjj
             Thread.sleep(9000);
-    one:
-       {
+
             driver.get(baseUrl);
             driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
 
@@ -169,7 +168,7 @@ public class sozdat_udalit {
            /*  if (isElementPresent(By.cssSelector("h1.x5r"))) {
                break one;
            }*/
-       }
+
 
        // Thread.sleep(5000);
        // driver.findElement(By.xpath("//table[@id='PageButtons']/tbody/tr/td[10]/button")).click();//создать ценовое

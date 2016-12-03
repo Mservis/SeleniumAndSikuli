@@ -30,13 +30,7 @@ public class chernovik {
 
     @Test
     public void chernoviK() throws Exception {
-        int a = 0;
-      sss:
-
-          a++;
-          if (a < 10) continue sss;
-
-        System.out.println("" + a);
+        funkcia();
     }
 
     @After
@@ -65,7 +59,10 @@ public class chernovik {
             return false;
         }
     }
-
+    private void funkcia()
+    {
+        System.out.println("Функция работает");
+    }
     private String closeAlertAndGetItsText() {
         try {
             Alert alert = driver.switchTo().alert();
