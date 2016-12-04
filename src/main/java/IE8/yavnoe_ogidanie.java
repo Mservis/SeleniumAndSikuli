@@ -16,10 +16,11 @@ import org.sikuli.script.Screen;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementSelectionStateToBe;
 import  static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-import java.sql.Time;
+//import java.sql.Time;
 import java.util.Date;
+import java.text.SimpleDateFormat;;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
 
@@ -37,8 +38,13 @@ public class yavnoe_ogidanie {
     private double maxPodachi;
     private double minUdalenia;
     private double maxUdalenia;
+    private int nomercenovogo;
+    private String nomerZayavki;
     @Before
     public void setUp() throws Exception {
+
+        nomerZayavki = "1099408"; //номер заявки в которой учавствует
+        nomercenovogo = 2; //каким номером по счету будет в ценовое предложене в общем списке с пркикрипленными файлами.
         driver = new InternetExplorerDriver();
         wait = new WebDriverWait(driver, 30000);
         sredneePodachi = 0;
@@ -73,7 +79,8 @@ public class yavnoe_ogidanie {
         {
 
         zaitivCenovie();
-        zapolnitPolya();
+        //zapolnitPolya();
+        zapolnitLoti();
         nagatprodolgit();
         nagatSozatcenovoe();
         podatCenovoe();
@@ -221,10 +228,24 @@ public class yavnoe_ogidanie {
     }
 
     private void udalilOk(){
-        while (isElementPresent(By.id("FileListRNEx:SignItemDisabled:1")))
-        {
-            System.out.println("Жду когда удалиться");
-        }
+
+        long startdelte = System.currentTimeMillis();
+       while (!(gdemNotelement(By.id("FileListRNEx:SignItemDisabled:1")))) // ждем когда исчезнет елемент
+       {
+         // System.out.println("удаляеться ... ") ;
+           /*if (System.currentTimeMillis() - startdelte > 15000)
+           {
+               //break
+           }*/
+       }
+
+      // element = wait.until(presenceOfElementLocated(By.id("SubmitBtn")));
+       while (!gdemelement(By.cssSelector("span.x8")))
+       {
+           System.out.println("Жду когда появитья.... ");
+       }
+        System.out.println("Элемент удалился через " + (System.currentTimeMillis() - startdelte)/1000 +" сек");
+
     }
     private void pokazatskorostPodachi()
     {
@@ -250,6 +271,9 @@ public class yavnoe_ogidanie {
         System.out.println("Среднее =  " + sredneeUdalenia);
         System.out.println("минимальное =  " + minUdalenia);
         System.out.println("макисмальное =  " + maxUdalenia);
+        Date d = new Date();
+        SimpleDateFormat d1= new SimpleDateFormat(" HH:mm:ss ");
+        System.out.println(d1.format(d));
         nachalotesta = System.currentTimeMillis();
 
     }
@@ -264,7 +288,7 @@ public class yavnoe_ogidanie {
         element = wait.until(presenceOfElementLocated(By.id("passwordField")));
         element.sendKeys("123456");
         driver.findElement(By.id("SubmitButton")).click();
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[contains(text(),'1099408')]")));
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[contains(text(),'"+nomerZayavki+"')]")));
         baseUrl = driver.getCurrentUrl();
         nachalotesta = System.currentTimeMillis();
         element.click();
@@ -277,12 +301,59 @@ public class yavnoe_ogidanie {
     }
     private void podatCenovoe()
     {
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:SignItem:1']/img")));
+       // System.out.println("System.out.println(\"//a[@id='FileListRNEx:SignItem:" + (nomercenovogo-1) + "']/img\");");
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:SignItem:" + (nomercenovogo-1) + "']/img")));
         element.click();// подписать
     }
-    private void zapolnitPole()
-    {
 
+    private void zapolnitLoti()
+    {
+     double ponizitNa = 4.5; //процент на который понизиться заявка от 1 до 5
+     //убрать
+     Random myRandom = new Random();
+     int n = myRandom.nextInt(40);
+     ponizitNa = (new Double(n+10))/10;
+     //убрать
+     zapolnitLot(1, ponizitNa);
+     zapolnitLot(2,  ponizitNa);
+    }
+    private void zapolnitLot(int lot, double ponizitNa)
+    {
+        // заполняет поля
+        String myrez0 = driver.findElement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr["+(1+lot)+"]/td[4]/span")).getText();
+        String str0 = "";
+        int i = 0;
+        for (i = 0; myrez0.charAt(i) != '.'; i++) {
+            if (myrez0.charAt(i) != ',') {
+                str0 += myrez0.charAt(i);
+            }
+        }
+        Double dbl0 = new Double(str0);
+        int int0 = (int) (dbl0 * (1 - (ponizitNa/100)));
+        element = wait.until(presenceOfElementLocated(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr["+(1+lot)+"]/td[5]/input")));
+        element.click();
+        element.sendKeys(Keys.CONTROL + "a");
+        element.sendKeys("" + int0);
+        element.sendKeys(Keys.TAB);
+        element = wait.until(presenceOfElementLocated(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr["+(1+lot)+"]/td[7]/span")));
+        str0 = element.getText();// количесво 1
+        int kolichestvo = Integer.parseInt(str0);
+        int povtor = 0;
+        int cenaStr = 0;
+        do {
+            do {
+                cenaStr = ProchitatCeny(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr["+(1+lot)+"]/td[8]/span"));//общая цена
+            } while (cenaStr == 0);
+            //"Строка2   "
+            System.out.println("Строка лота" + lot + "  " + str0);
+            System.out.println("Повтор лота"+ lot + "  "  + povtor);
+            System.out.println("Количество лота"+ lot + "  "   + kolichestvo);
+            System.out.println("Процент понижения   " + ponizitNa);
+            System.out.println("Коэфицент умножения   " +  (1 - (ponizitNa/100)));
+            povtor++;
+            cenaStr = cenaStr/kolichestvo;
+        }
+        while (int0 != cenaStr);
     }
     private  void zapolnitPolya()
     {
@@ -385,30 +456,50 @@ public class yavnoe_ogidanie {
     {
         element = wait.until(presenceOfElementLocated(By.xpath("//div[6]/div/table/tbody/tr/td[2]/table/tbody/tr/td[10]/button")));
         element.click();//нажать продолжить
-        System.out.println("Кнопка продолжить есть или нет    " + isElementPresent(By.cssSelector("#BidAttributesTable > table.x1h > tbody > tr > th.x1r")));
-        while (!isElementPresent(By.cssSelector("#BidAttributesTable > table.x1h > tbody > tr > th.x1r"))) // ищет создать ценовое
+        //System.out.println("Кнопка продолжить есть или нет    " + isElementPresent(By.cssSelector("#BidAttributesTable > table.x1h > tbody > tr > th.x1r")));
+        long startgdem = System.currentTimeMillis();
+        while (!gdemelement(By.cssSelector("#BidAttributesTable > table.x1h > tbody > tr > th.x1r"))) // ищет создать ценовое
         {
-            System.out.println("Ищу создать ценовое    ");
 
-            if (isElementPresent(By.cssSelector("h1.x5r"))) {
+            System.out.println("Ищу создать ценовое    ");
+            if((System.currentTimeMillis() - startgdem) > 8000)// время ожидания элемента поле которого перегруз
+                {
+                    System.out.println("зависло не появилоась не ошибка не кнопка   ");
+                    //здесь код если зависло в этом метсе не появилоась не ошибка не кнопка
+                    zaitivCenovie();
+                    zapolnitLoti();
+                    element = wait.until(presenceOfElementLocated(By.xpath("//div[6]/div/table/tbody/tr/td[2]/table/tbody/tr/td[10]/button")));
+                    element.click();
+                }
+
+            if (gdemelement(By.cssSelector("h1.x5r"))) {
+                System.out.println("Вылезла ошибка на странице");
                 zaitivCenovie();
-                zapolnitPolya();
+               // zapolnitPolya();
+                zapolnitLoti();
                 element = wait.until(presenceOfElementLocated(By.xpath("//div[6]/div/table/tbody/tr/td[2]/table/tbody/tr/td[10]/button")));
                 element.click();
             }
         }
 
+
     }
     private  void nagatudalit()
     {
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")));
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:DeleteItem:" + (nomercenovogo-1) + "']/img")));
         element.click();// нажать корзинку т.е. нажать удалить
     }
     private void zaitivCenovie()
     {
-        while (!isElementPresent(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[4]/span"))) // ищет поле с ценой
+        long startgdem = System.currentTimeMillis();
+        while (!gdemelement(By.xpath("//span[@id='BidItemPricesTableVO']/table[2]/tbody/tr[2]/td[4]/span"))) // ищет поле с ценой
         {
-            if (isElementPresent(By.cssSelector("h1.x5r"))) {
+            if ((System.currentTimeMillis() - startgdem)> 9000) // время ожидания элемента поле которого перегруз
+            {
+                zaitivzayavku();
+                nagatstroki();
+            }
+            if (gdemelement(By.cssSelector("h1.x5r"))) {
                 zaitivzayavku();
                 nagatstroki();
             }
@@ -422,7 +513,45 @@ public class yavnoe_ogidanie {
         } catch (NoSuchElementException e) {
             return false;
         }
+        catch (UnhandledAlertException e)
+        {
+            return false;
+        }   }
+    private boolean gdemelement(By by)
+    {
+         try {
+             driver.findElement(by);
+
+             return true;
+         } catch (NoSuchElementException e) {
+             return false;
+         } catch (UnhandledAlertException e) {
+             return false;
+         } catch (StaleElementReferenceException e) {
+             return false;
+         } catch (ElementNotVisibleException e) {
+             return false;
+         }
+
+
     }
+    private boolean gdemNotelement(By by)
+    {
+            try {
+                driver.findElement(by);
+                return false;
+            } catch (NoSuchElementException e) {
+                return true;
+            } catch (UnhandledAlertException e) {
+                return true;
+            } catch (StaleElementReferenceException e) {
+                return true;
+            } catch (ElementNotVisibleException e) {
+                return true;
+            }
+
+    }
+
     private int ProchitatCeny(By by)
     {
         try
@@ -451,6 +580,9 @@ public class yavnoe_ogidanie {
         {
             return 0;
         }
+        catch (UnhandledAlertException e) {
+            return 0;
+        }
 
 
     }
@@ -465,7 +597,7 @@ public class yavnoe_ogidanie {
     private void zaitivzayavku()
     {
         driver.get(baseUrl);
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[contains(text(),'1099408')]")));
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[contains(text(),'"+nomerZayavki+"')]")));
         baseUrl = driver.getCurrentUrl();
         element.click();
     }

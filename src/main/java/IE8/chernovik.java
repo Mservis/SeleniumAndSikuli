@@ -30,7 +30,10 @@ public class chernovik {
 
     @Test
     public void chernoviK() throws Exception {
-        funkcia();
+       // funkcia();
+        int nomer = 2;
+       System.out.println("//a[@id='FileListRNEx:SignItem:1']/img");
+        System.out.println("//a[@id='FileListRNEx:SignItem:" + (nomer -1) + "']/img");
     }
 
     @After
