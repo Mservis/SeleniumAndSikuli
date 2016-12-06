@@ -20,12 +20,14 @@ public class udalit {
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
+    private String nomerZayavki;
 
     @Before
     public void setUp() throws Exception {
         driver = new InternetExplorerDriver();
         //baseUrl = "http://tender.sk.kz/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        nomerZayavki = "1106614";
     }
 
     @Test
@@ -51,7 +53,7 @@ public class udalit {
         driver.findElement(By.id("passwordField")).sendKeys("123456");
         driver.findElement(By.id("SubmitButton")).click();
         //*********************************
-        driver.findElement(By.xpath("//a[contains(text(),'1099408')]")).click();//зайти в заявку
+        driver.findElement(By.xpath("//a[contains(text(),'"+nomerZayavki+"')]")).click();//зайти в заявку
         driver.findElement(By.xpath("//a[@id='FileListRNEx:DeleteItem:1']/img")).click();
         Region okwin = new Region(749,479,100,49);
         okwin.click(ok2);//jjj

@@ -96,9 +96,9 @@ public class TimeSinhron {
         else hhServ = hhKon-hhOst;
        // System.out.println(hhServ);
         String hhStr,mmStr,ssStr = "";
-        if (hhServ < 10) hhStr = "0"+ssServ;
+        if (hhServ < 10) hhStr = "0"+hhServ;
         else hhStr = ""+ hhServ;
-        if (mmServ < 10) mmStr = "0"+ssServ;
+        if (mmServ < 10) mmStr = "0"+mmServ;
         else mmStr = "" + mmServ;
         if (ssServ < 10) ssStr = "0"+ssServ;
         else ssStr = "" + ssServ;
