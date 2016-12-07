@@ -31,9 +31,9 @@ public class yavnoe_ogidanie {
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
     private WebElement element;
-    private long nachalotesta;
+    private long nachalotesta, nachalovsegotesta;
     private double sredneePodachi, sredneeUdalenia, minPodachi, maxPodachi, minUdalenia, maxUdalenia;
-    private int nomercenovogo;
+    private int nomercenovogo, iPovtor;
     private Region okwindow;
     private Pattern ok2,inputPass,ok3,gotovotpravit,podpisat, input2, ok4, otpravit, otpravil, pwdOk, pustoijava, gotovpodpisat, postavshik;
 
@@ -60,16 +60,18 @@ public class yavnoe_ogidanie {
         otpravit = new Pattern("c:\\forsikuli\\otpravit.png");
         otpravil = new Pattern("c:\\forsikuli\\ie8\\otpravil.png");
         pwdOk = new Pattern("c:\\forsikuli\\ie8\\pwdOk.png");
-        pustoijava = new Pattern("c:\\forsikuli\\ie8\\pustoijava.png");
+        //pustoijava = new Pattern("c:\\forsikuli\\ie8\\pustoijava.png");
+        pustoijava = new Pattern("c:\\forsikuli\\ie8\\pustoijava2.png");
         gotovpodpisat = new Pattern("c:\\forsikuli\\ie8\\gotovpodpisat.png");
         postavshik = new Pattern("c:\\forsikuli\\ie8\\postavshik.png");
         }
 
     @Test
     public void IE8_sozdat_cenovoe() throws Exception {
+        nomercenovogo--;
+        nachalovsegotesta = System.currentTimeMillis();
         auth();
-
-        for (int iPovtor = 0; iPovtor<1200; iPovtor++)
+        for (iPovtor = 0; iPovtor<1200; iPovtor++)
         {
         zaitivCenovie();
         zapolnitLoti();
@@ -78,10 +80,11 @@ public class yavnoe_ogidanie {
         podatCenovoe();
         SikuliModalWidow();
         SikuliJavaPwd();
-        proverkaPustoyaJava();
+        proverkaNaitiPodpisat();
         SikuliPodpisatButton();
         SikuliJavaPwd2();
         SikuliJavaOtpravitButton();
+        //podpislosOk();
         pokazatskorostPodachi();
         zaitivzayavku();
         udalizayavku();
@@ -131,6 +134,7 @@ public class yavnoe_ogidanie {
         System.out.println("Среднее =  " + sredneePodachi);
         System.out.println("минимальное =  " + minPodachi);
         System.out.println("макисмальное =  " + maxPodachi);
+        System.out.println("Тест повторился = " + iPovtor);
         nachalotesta = System.currentTimeMillis();
     }
     private void pokazatskorosUdaleniya()
@@ -146,14 +150,29 @@ public class yavnoe_ogidanie {
         System.out.println("макисмальное =  " + maxUdalenia);
         Date d = new Date();
         SimpleDateFormat d1= new SimpleDateFormat(" HH:mm:ss ");
-        System.out.println(d1.format(d));
+        System.out.println("Текущее время: " + d1.format(d));
+        System.out.println("Тест длиться:  "+ (((System.currentTimeMillis() - nachalovsegotesta)/1000)/60 ));
         nachalotesta = System.currentTimeMillis();
 
     }
-    private void podpislosOk()
+   /* private void podpislosOk() throws Exception
     {
-        element = wait.until(presenceOfElementLocated(By.id("FileListRNEx:SignItemDisabled:1")));//подождать пока иконка подвисать станет неактивной
-    }
+
+        long startgdem = System.currentTimeMillis();
+        while (!gdemelement(By.id("FileListRNEx:SignItemDisabled:"+(nomercenovogo)))) // ищет иконку котороя станет не активной если ценовое подписалось
+        {
+            if((System.currentTimeMillis() - startgdem) > 4000)// время ожидания элемента поле которого перегруз
+            {
+                podatCenovoe();
+                SikuliModalWidow();
+                SikuliJavaPwd();
+                proverkaPustoyaJava();
+                SikuliPodpisatButton();
+                SikuliJavaPwd2();
+            }
+        }
+       // element = wait.until(presenceOfElementLocated(By.id("FileListRNEx:SignItemDisabled:1")));//подождать пока иконка подвисать станет неактивной
+    }*/
     private void auth()
     {
         driver.manage().window().maximize();
@@ -175,7 +194,7 @@ public class yavnoe_ogidanie {
     private void podatCenovoe()
     {
        // System.out.println("System.out.println(\"//a[@id='FileListRNEx:SignItem:" + (nomercenovogo-1) + "']/img\");");
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:SignItem:" + (nomercenovogo-1) + "']/img")));
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:SignItem:" + (nomercenovogo) + "']/img")));
         element.click();// подписать
         System.out.println("Нажал пиктограмку подписать");
     }
@@ -271,7 +290,7 @@ public class yavnoe_ogidanie {
     }
     private  void nagatudalit()
     {
-        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:DeleteItem:" + (nomercenovogo-1) + "']/img")));
+        element = wait.until(presenceOfElementLocated(By.xpath("//a[@id='FileListRNEx:DeleteItem:" + (nomercenovogo) + "']/img")));
         element.click();// нажать корзинку т.е. нажать удалить
     }
     private void zaitivCenovie()
@@ -412,23 +431,24 @@ public class yavnoe_ogidanie {
         okwindow.click(ok2);
 
     }
-    private void proverkaPustoyaJava() throws Exception {
+    private void proverkaNaitiPodpisat() throws Exception {
         long nachalo = System.currentTimeMillis();
-        boolean pustijavabool = true;
+        boolean nashelpodpisat = true;
         int povtor = 1;
         do{
-            okwindow.setRect(354,579,120,94);
+            //okwindow.setRect(354,579,120,94);
+            okwindow.setRect(146, 589, 76, 23);
 
             try {
-                okwindow.wait(pustoijava, 0.5);
-                pustijavabool = false;
+                okwindow.wait(gotovpodpisat, 2);
+                nashelpodpisat = true;
             }
             catch (FindFailed e)
             {
-                pustijavabool = true;
+                nashelpodpisat = false;
             }
 
-            System.out.println("Пустая джава pustijavabool  = " + pustijavabool);
+            System.out.println("Нашел подписать = " + nashelpodpisat);
             System.out.println("long nachalo ="+nachalo);
             System.out.println("milis - long nachalo =" + (System.currentTimeMillis() - nachalo));
             if ((System.currentTimeMillis() - nachalo) > 3000)
@@ -438,26 +458,28 @@ public class yavnoe_ogidanie {
                 SikuliModalWidow();
                 SikuliJavaPwd();
                 nachalo = System.currentTimeMillis();
-                okwindow.setRect(354,579,120,94);
+                okwindow.setRect(146, 589, 76, 23);
+
                 try {
-                    okwindow.wait(pustoijava,2);
-                    pustijavabool = false;
+                    okwindow.wait(gotovpodpisat, 2);
+                    nashelpodpisat = true;
                 }
                 catch (FindFailed e)
                 {
-                    pustijavabool = true;
+                    nashelpodpisat = false;
                 }
+
             }
 
         }
-        while (pustijavabool);
-        System.out.println("Проверка пустая джава ОК ");
+        while (!nashelpodpisat);
+        System.out.println("Проверка нашел подписать ОК ");
     }
     private void ispravitGluk() throws Exception{
         okwindow.setRect(196, 345, 88, 36);
         okwindow.click(postavshik);
     }
-    private void proverkaGotovPodpisat() throws Exception{
+    /*private void proverkaGotovPodpisat() throws Exception{
         long nachalo = System.currentTimeMillis();
         boolean pustijavabool = true;
         int povtor = 1;
@@ -465,7 +487,7 @@ public class yavnoe_ogidanie {
             okwindow.setRect(146, 589, 76, 23);
             //pustijavabool = !(okwindow.exists(gotovpodpisat,1) == null);
             try {
-                okwindow.wait(gotovpodpisat,0.5);
+                okwindow.wait(gotovpodpisat,2);
                 pustijavabool = false;
             }
             catch (FindFailed e)
@@ -486,8 +508,8 @@ public class yavnoe_ogidanie {
                 //окно джава просит пароль
                 SikuliJavaPwd();
                 nachalo = System.currentTimeMillis();
-                proverkaPustoyaJava();
-                System.out.println("Проверка пустая джава ОК ");
+                proverkaNaitiPodpisat();
+                System.out.println("Проверка нашел подписать ОК ");
                 nachalo = System.currentTimeMillis();
                 okwindow.setRect(146, 589, 76, 23);
                 try {
@@ -503,7 +525,7 @@ public class yavnoe_ogidanie {
 
         }
         while (pustijavabool);
-    }
+    }*/
     private void SikuliPodpisatButton() throws Exception{
         okwindow.setRect(146, 589, 76, 23);
         okwindow.wait(gotovpodpisat, 10000);
@@ -517,6 +539,7 @@ public class yavnoe_ogidanie {
 
         do {
             //кликает в поле
+            okwindow.setRect(597, 433, 245, 54);
             boolean neclichul = true;
             do {
 
@@ -535,15 +558,18 @@ public class yavnoe_ogidanie {
 
             try {
                 // okwindow.find(pwdOk);
-                okwindow.setRect(597, 433, 245, 54);
+                okwindow.setRect(729, 438, 80, 14);
                 System.out.println("Ищу пароль");
+                //okwindow.cl
                 okwindow.wait(pwdOk,2);
                 NeviguPWD = false;
                 System.out.println("Нашел пароль");
             } catch (FindFailed e) {
                 NeviguPWD = true;
+                System.out.println("НЕ наашел пароль");
             }
         }while (NeviguPWD);
+        okwindow.setRect(645, 459, 29, 26);
         okwindow.click(ok4);
     }
     private void SikuliJavaOtpravitButton() throws Exception{
@@ -551,9 +577,30 @@ public class yavnoe_ogidanie {
         okwindow.wait(gotovotpravit, 10000);
         okwindow.setRect(217, 625, 84, 38);
         okwindow.click(otpravit);
-        okwindow.setRect(31, 625, 97, 40);
-        okwindow.wait(gotovotpravit, 10000);
-        podpislosOk();
+        System.out.println("Нажал отправить на сервер заявку");
+        long startgdem = System.currentTimeMillis();
+        while (!gdemelement(By.id("FileListRNEx:SignItemDisabled:"+(nomercenovogo))))
+        {
+
+            if((System.currentTimeMillis() - startgdem) > 4000)// время ожидания элемента поле которого перегруз
+            {
+                System.out.println("Подаюсь за ново из за ошибки неотправилось на сервер");
+                podatCenovoe();
+                SikuliModalWidow();
+                SikuliJavaPwd();
+                proverkaNaitiPodpisat();
+                SikuliPodpisatButton();
+                SikuliJavaPwd2();
+                okwindow.setRect(31, 625, 97, 40);
+                okwindow.wait(gotovotpravit, 10000);
+                okwindow.setRect(217, 625, 84, 38);
+                okwindow.click(otpravit);
+            }
+        }  // ищет иконку котороя станет не активной если ценовое подписалось
+        // while (gdemNotelement(By.xpath("//a[@id='FileListRNEx:SignItem:" + (nomercenovogo) + "']/img")));
+        //By.xpath("//a[@id='FileListRNEx:SignItem:" + (nomercenovogo) + "']/img")
+        /*okwindow.setRect(31, 625, 97, 40);
+        okwindow.wait(gotovotpravit, 10000);*/
     }
     private void udalizayavku() throws Exception{
         nagatudalit();

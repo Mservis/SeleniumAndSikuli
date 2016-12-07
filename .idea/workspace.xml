@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30c4ebf5-7080-4a89-a47d-c5830e0e6228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/HelperBasePakage/SikuliHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/IE8/NavigatorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/IE8/TimeSinhron.class" afterPath="$PROJECT_DIR$/target/classes/IE8/TimeSinhron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/IE8/chernovik.class" afterPath="$PROJECT_DIR$/target/classes/IE8/chernovik.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/IE8/udalit.class" afterPath="$PROJECT_DIR$/target/classes/IE8/udalit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/IE8/yavnoe_ogidanie.class" afterPath="$PROJECT_DIR$/target/classes/IE8/yavnoe_ogidanie.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/TimeSinhron.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/TimeSinhron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/chernovik.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/chernovik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/udalit.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/udalit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/IE8/yavnoe_ogidanie.java" afterPath="$PROJECT_DIR$/src/main/java/IE8/yavnoe_ogidanie.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="yavnoe_ogidanie.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="yavnoe_ogidanie.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/yavnoe_ogidanie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+            <state relative-caret-position="147">
+              <caret line="458" column="32" lean-forward="true" selection-start-line="458" selection-start-column="32" selection-end-line="458" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,13 +43,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="By.class" pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.0.1/selenium-api-3.0.1.jar!/org/openqa/selenium/By.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="139" column="5" lean-forward="true" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="chernovik.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/chernovik.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="323">
               <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4245#4246#0" expanded="false" />
+                <element signature="e#4299#4300#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,8 +69,8 @@
       <file leaf-file-name="udalit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="63" column="44" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="44" />
+            <state relative-caret-position="136">
+              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -85,23 +87,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auth</find>
-      <find>element</find>
-      <find>nomer</find>
-      <find>nomerz</find>
-      <find>wait</find>
-      <find>d podatce</find>
-      <find>podatce</find>
-      <find>123456</find>
-      <find>type</find>
-      <find>.find</find>
-      <find>.find(</find>
-      <find>.wait(</find>
-      <find>.wait(p</find>
       <find>0.1</find>
       <find>aut</find>
-      <find>element</find>
-      <find>wait</find>
       <find>okw</find>
       <find>javap</find>
       <find>jawa</find>
@@ -112,9 +99,24 @@
       <find>proverkaPustoyaJava</find>
       <find>nacha</find>
       <find>nachalo</find>
-      <find>nachalo</find>
       <find>okwindow.setRect(146, 589, 76, 23);</find>
       <find>prov</find>
+      <find>nachalote</find>
+      <find>po</find>
+      <find>nomerc</find>
+      <find>gdemele</find>
+      <find>nomerce</find>
+      <find>gdem</find>
+      <find>podpis</find>
+      <find>podpislosOk</find>
+      <find>SikuliJavaOtpravitButton</find>
+      <find>Sign</find>
+      <find>pok</find>
+      <find>pwdok</find>
+      <find>w.wait(</find>
+      <find>podpisatb</find>
+      <find>pust</find>
+      <find>proverkag</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -275,6 +277,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -405,7 +408,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -771,9 +773,9 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.yavnoe_ogidanie.IE8_sozdat_cenovoe" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.udalit.IE8_udalit_cenovoe" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.chernovik" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.chernovik.chernoviK" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.yavnoe_ogidanie" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.yavnoe_ogidanie" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.chernovik" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.chernovik.chernoviK" />
       </list>
     </recent_temporary>
   </component>
@@ -791,34 +793,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="chernovik - 2016.12.06 at 23h 08m 58s.xml">
-      <configuration name="chernovik" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.06 at 23h 57m 15s.xml">
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.07 at 12h 25m 23s.xml">
       <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.07 at 00h 14m 33s.xml">
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.07 at 14h 20m 19s.xml">
       <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.07 at 00h 15m 06s.xml">
+    <history-entry file="udalit_IE8_udalit_cenovoe - 2016.12.07 at 14h 24m 13s.xml">
       <configuration name="udalit.IE8_udalit_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.06 at 23h 39m 31s.xml">
+    <history-entry file="yavnoe_ogidanie - 2016.12.07 at 12h 25m 45s.xml">
+      <configuration name="yavnoe_ogidanie" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 12h 37m 46s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.06 at 23h 59m 23s.xml">
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 14h 19m 45s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 00h 14m 17s.xml">
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 14h 21m 31s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 00h 16m 23s.xml">
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 14h 23m 10s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 00h 48m 48s.xml">
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 14h 38m 15s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 01h 01m 28s.xml">
+    <history-entry file="yavnoe_ogidanie_IE8_sozdat_cenovoe - 2016.12.07 at 16h 44m 12s.xml">
       <configuration name="yavnoe_ogidanie.IE8_sozdat_cenovoe" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -844,19 +846,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39194632" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51543623" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.304698" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20171674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53825504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -887,11 +889,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21610738" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.304698" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20314735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20171674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -918,13 +920,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/example/SikuliTestTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1252,18 +1247,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="113" column="26" lean-forward="true" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IE8/chernovik.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="323">
           <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4245#4246#0" expanded="false" />
+            <element signature="e#4299#4300#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1273,16 +1266,8 @@
         <state relative-caret-position="398">
           <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="63" column="44" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,19 +1275,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/udalit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/yavnoe_ogidanie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="458" column="32" lean-forward="true" selection-start-line="458" selection-start-column="32" selection-end-line="458" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IE8/yavnoe_ogidanie.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.0.1/selenium-api-3.0.1.jar!/org/openqa/selenium/By.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="549">
+          <caret line="139" column="5" lean-forward="true" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
